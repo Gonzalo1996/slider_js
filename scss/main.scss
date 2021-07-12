@@ -1,0 +1,53 @@
+@use 'components/layout' as l;
+@use 'components/colors' as c;
+@use 'components/button' as b; 
+
+body{
+    background: c.$base_color;
+}
+
+section{
+    height: 100vh;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    @include l.flexCenter;
+    
+     .container-slider{
+        display: flex;
+        padding: 0;
+        width: 300%;
+      
+        .container-img{
+            width: 100%;
+            list-style: none;
+        
+            img{            
+                width: 100%;
+                height: 550px;
+            }
+        }
+     }
+
+     .slider_btn{
+         position: absolute;
+         transform: translateY(-50%);
+         transition: 0.3s;
+         top: 50%;
+         @include b.btnSlider;
+
+         &:hover{
+             background: c.$base_color;
+             transition: 0.3s;
+         }
+     }
+
+     .slider_btn--rigth{
+        right: 12%;
+    }
+
+    .slider_btn--left{
+       left: 12%;
+    }
+}
+
